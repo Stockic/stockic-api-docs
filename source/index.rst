@@ -14,6 +14,6 @@ Stockic Docs
 
 .. toctree::
    :maxdepth: 2
-   :caption: API Documentation (v2)
+   :caption: API Documentation (v2):
 
-   api-docs-v2/index.md
+   feed-api-v2/index.md

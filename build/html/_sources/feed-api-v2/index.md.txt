@@ -112,45 +112,6 @@ GET /newsfeed/<page-size>/<page-number>
 ```
 **Curl Command:** `curl -X GET -H <api-key> http://feed-api.stockic.in/api/v2/newsfeed/<page-size>/<page-number>`
 
-
----
-
-## Detail Endpoint
-Fetching details about the news with news ID. Stockic has all it's tagged with news ID called stockicID to uniquely identify news. With just the stockicID, you can fetch all the information about it. 
-
-**Request:**
-```bash
-GET /detail/<news-id>
-```
-**Response:**
-```json
-{
-  "stockicID": "bdfcef5f9dcb62e574114ccd7e02c30974bdd768838eed919736ef6412c705b9",
-  "source": "The Washington Post",
-  "author": "Ben Noll",
-  "title": "Where some of the coldest air of the season will hit in the U.S. this week - The Washington Post",
-  "url": "https://www.washingtonpost.com/weather/2025/02/17/polar-vortex-subzero-cold-forecast-snow-ice-storm/",
-  "urlToImage": "https://theintercept.com/wp-content/uploads/2017/01/the-washington-post-newspaper-2-1484771977.jpg",
-  "publishedAt": "2025-02-17T11:55:23Z",
-  "content": "A lobe of the polar vortex, a ring of freezing air typically found near the North Pole, will once again move into the central and eastern states this week, bringing some of the coldest air of the win… [+6433 chars]",
-  "companyTags": [
-    "Nvidia",
-    "Google"
-  ],
-  "highlightsIndex": [
-    [
-      1,
-      5
-    ],
-    [
-      7,
-      10
-    ]
-  ]
-}
-```
-**Curl Command:** `curl -X GET -H <api-key> http://feed-api.stockic.in/api/v2/detail/<news-id>`
-
 ---
 
 ## Discover Endpoint
@@ -196,3 +157,41 @@ GET /discover/<category>/<page-size>/<page-number>
 }
 ```
 **Curl Command:** `curl -X GET -H <api-key> http://feed-api.stockic.in/api/v2/discover/<category>/<page-size>/<page-number>`
+
+---
+
+## Detail Endpoint
+Fetching details about the news with news ID. Stockic has all it's tagged with news ID called stockicID to uniquely identify news. With just the stockicID, you can fetch all the information about it. 
+
+**Request:**
+```bash
+GET /detail/<news-id>
+```
+**Response:**
+```json
+{
+  "stockicID": "bdfcef5f9dcb62e574114ccd7e02c30974bdd768838eed919736ef6412c705b9",
+  "source": "The Washington Post",
+  "author": "Ben Noll",
+  "title": "Where some of the coldest air of the season will hit in the U.S. this week - The Washington Post",
+  "url": "https://www.washingtonpost.com/weather/2025/02/17/polar-vortex-subzero-cold-forecast-snow-ice-storm/",
+  "urlToImage": "https://theintercept.com/wp-content/uploads/2017/01/the-washington-post-newspaper-2-1484771977.jpg",
+  "publishedAt": "2025-02-17T11:55:23Z",
+  "content": "A lobe of the polar vortex, a ring of freezing air typically found near the North Pole, will once again move into the central and eastern states this week, bringing some of the coldest air of the win… [+6433 chars]",
+  "companyTags": [
+    "Nvidia",
+    "Google"
+  ],
+  "highlightsIndex": [
+    [
+      1,
+      5
+    ],
+    [
+      7,
+      10
+    ]
+  ]
+}
+```
+**Curl Command:** `curl -X GET -H <api-key> http://feed-api.stockic.in/api/v2/detail/<news-id>`
