@@ -1,6 +1,3 @@
-# Feed API V2 Docs 
-This documentation covers all major aspects of the Feed API. The API is REST compliant and requires authentication to make any calls. 
-
 ## Feed API V2 Overview
 API V2 is the second version of our API, offering enhanced performance and new features.
 

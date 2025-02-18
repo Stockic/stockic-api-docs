@@ -11,5 +11,9 @@ Stockic Docs
    :caption: Contents:
 
    introduction.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API Documentation (v2)
+
    api-docs-v2/index.md
-   api-docs-v2/endpoints.md

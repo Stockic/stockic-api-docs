@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Introduction" href="../introduction.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Feed API V2 Docs - Stockic API documentation</title>
+        <title>Feed API V2 Overview - Stockic API documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -203,8 +203,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Documentation (v2)</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Feed API V2 Docs</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Feed API V2 Docs</a></li>
 </ul>
 
 </div>
@@ -225,7 +225,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/api-docs-v2/index.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/api-docs-v2/feed-api.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -239,26 +239,23 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="feed-api-v2-docs">
-<h1>Feed API V2 Docs<a class="headerlink" href="#feed-api-v2-docs" title="Link to this heading">¶</a></h1>
-<p>This documentation covers all major aspects of the Feed API. The API is REST compliant and requires authentication to make any calls.</p>
-<section id="feed-api-v2-overview">
-<h2>Feed API V2 Overview<a class="headerlink" href="#feed-api-v2-overview" title="Link to this heading">¶</a></h2>
+          <section id="feed-api-v2-overview">
+<h1>Feed API V2 Overview<a class="headerlink" href="#feed-api-v2-overview" title="Link to this heading">¶</a></h1>
 <p>API V2 is the second version of our API, offering enhanced performance and new features.</p>
 <ul class="simple">
 <li><p><strong>Endpoints</strong>: The base endpoint is <code class="docutils literal notranslate"><span class="pre">http://feed-api.stockic.in/ap1/v2</span></code></p></li>
 <li><p><strong>Authentication</strong>: All the requests need HTTP Header <code class="docutils literal notranslate"><span class="pre">X-API-Key:</span> <span class="pre">&lt;api-key&gt;</span></code> with the request. In case of using CURL: <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">&lt;HTTP</span> <span class="pre">METHOD&gt;</span> <span class="pre">-H</span> <span class="pre">'X-API-Key:</span> <span class="pre">&lt;API-KEY&gt;'</span> <span class="pre">API_ENDPOINT</span></code></p></li>
 </ul>
-</section>
 <hr class="docutils" />
+</section>
 <section id="ping-endpoint">
-<h2>Ping Endpoint<a class="headerlink" href="#ping-endpoint" title="Link to this heading">¶</a></h2>
+<h1>Ping Endpoint<a class="headerlink" href="#ping-endpoint" title="Link to this heading">¶</a></h1>
 <p>Ping test to check if the API Server is up.</p>
 <p><strong>Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/ping
@@ -271,10 +268,10 @@
 </pre></div>
 </div>
 <p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://feed-api.stockic.in/api/v2/ping</span></code></p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="headlines-endpoint">
-<h2>Headlines Endpoint<a class="headerlink" href="#headlines-endpoint" title="Link to this heading">¶</a></h2>
+<h1>Headlines Endpoint<a class="headerlink" href="#headlines-endpoint" title="Link to this heading">¶</a></h1>
 <p>Returns Top Headlines of the day from various countries. Currently, it’s the news from all over the world.</p>
 <p><strong>Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/api/v2/headlines/&lt;page-size&gt;
@@ -314,10 +311,10 @@
 </pre></div>
 </div>
 <p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://feed-api.stockic.in/api/v2/headlines/&lt;page-size&gt;</span></code></p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="newsfeed-endpoint">
-<h2>Newsfeed Endpoint<a class="headerlink" href="#newsfeed-endpoint" title="Link to this heading">¶</a></h2>
+<h1>Newsfeed Endpoint<a class="headerlink" href="#newsfeed-endpoint" title="Link to this heading">¶</a></h1>
 <p>Serves newsfeeds with page size and page numbers. Also contain the headlines in it.</p>
 <p><strong>Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/newsfeed/&lt;page-size&gt;/&lt;page-number&gt;
@@ -357,10 +354,10 @@
 </pre></div>
 </div>
 <p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://feed-api.stockic.in/api/v2/newsfeed/&lt;page-size&gt;/&lt;page-number&gt;</span></code></p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="detail-endpoint">
-<h2>Detail Endpoint<a class="headerlink" href="#detail-endpoint" title="Link to this heading">¶</a></h2>
+<h1>Detail Endpoint<a class="headerlink" href="#detail-endpoint" title="Link to this heading">¶</a></h1>
 <p>Fetching details about the news with news ID. Stockic has all it’s tagged with news ID called stockicID to uniquely identify news. With just the stockicID, you can fetch all the information about it.</p>
 <p><strong>Request:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/detail/&lt;news-id&gt;
@@ -394,10 +391,10 @@
 </pre></div>
 </div>
 <p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://feed-api.stockic.in/api/v2/detail/&lt;news-id&gt;</span></code></p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="discover-endpoint">
-<h2>Discover Endpoint<a class="headerlink" href="#discover-endpoint" title="Link to this heading">¶</a></h2>
+<h1>Discover Endpoint<a class="headerlink" href="#discover-endpoint" title="Link to this heading">¶</a></h1>
 <p>Categories of news can be accessed through this endpoint.</p>
 <p>Available categories: gainers, losers, software, finance, stocks, bonds, corporate, banking, technology, tax, geopolitics</p>
 <p><strong>Request:</strong></p>
@@ -439,7 +436,6 @@
 </div>
 <p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://feed-api.stockic.in/api/v2/discover/&lt;category&gt;/&lt;page-size&gt;/&lt;page-number&gt;</span></code></p>
 </section>
-</section>
 
         </article>
       </div>
@@ -447,17 +443,7 @@
         
         <div class="related-pages">
           
-          <a class="prev-page" href="../introduction.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Introduction</div>
-                
-              </div>
-            </a>
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -476,32 +462,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Feed API V2 Docs</a><ul>
-<li><a class="reference internal" href="#feed-api-v2-overview">Feed API V2 Overview</a></li>
-<li><a class="reference internal" href="#ping-endpoint">Ping Endpoint</a></li>
-<li><a class="reference internal" href="#headlines-endpoint">Headlines Endpoint</a></li>
-<li><a class="reference internal" href="#newsfeed-endpoint">Newsfeed Endpoint</a></li>
-<li><a class="reference internal" href="#detail-endpoint">Detail Endpoint</a></li>
-<li><a class="reference internal" href="#discover-endpoint">Discover Endpoint</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
