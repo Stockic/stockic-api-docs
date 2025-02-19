@@ -2,7 +2,7 @@
 
 ![Copy of Copy of White Minimalist Profile LinkedIn Banner](https://github.com/user-attachments/assets/c78e390c-9039-463e-b66e-ce80e004d84e)
 
-### Welcome to Stockic API! 
+## Welcome to Stockic API! 
 
 Stockic is a **minimal and intelligent** finance newsfeed application without noise for Android and iOS. We gather news from various trusted sources, compile their insights with AI, and feed it to you so you don't have to wander around different platforms. This **enhances your productivity** and keeps you updated with current finance news. All the content would be untouched, and everything would move through AI to prevent any external human interpretation of news so that you can get exact insights in short forms.     
 

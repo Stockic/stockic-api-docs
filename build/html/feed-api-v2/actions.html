@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Feed API V2 Overview" href="feed-api.html" /><link rel="prev" title="Introduction" href="../introduction.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Feed API V2 Overview" href="feed-api.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Feed API V2 Docs - Stockic API documentation</title>
+        <title>Actions API V2 Overview - Stockic API documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -204,9 +204,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Feed API V2</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Feed API V2 Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Feed API V2 Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feed-api.html">Feed API V2 Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="actions.html">Actions API V2 Overview</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Actions API V2 Overview</a></li>
 </ul>
 
 </div>
@@ -227,7 +227,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/feed-api-v2/index.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/feed-api-v2/actions.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -241,20 +241,127 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="feed-api-v2-docs">
-<h1>Feed API V2 Docs<a class="headerlink" href="#feed-api-v2-docs" title="Link to this heading">¶</a></h1>
-<p>This documentation covers all major aspects of the Feed API. The API is REST compliant and requires authentication to make any calls.</p>
-<p>The API is divided into 2 categories based on their functionality:</p>
+          <section id="actions-api-v2-overview">
+<h1>Actions API V2 Overview<a class="headerlink" href="#actions-api-v2-overview" title="Link to this heading">¶</a></h1>
+<p>Actions were introducted in the V2 of Stockic API, offering bookmarking of articles, performing integrations, etc.</p>
 <ul class="simple">
-<li><p>Feed API: Serves News articles as per required</p></li>
-<li><p>Action: Perform actions like interacting with user bookmarks, integrations, etc.</p></li>
+<li><p><strong>Endpoints</strong>: The base endpoint is <code class="docutils literal notranslate"><span class="pre">http://actions.stockic.in/api/v2/actions</span></code></p></li>
+<li><p><strong>Authentication</strong>: All the requests need HTTP Header <code class="docutils literal notranslate"><span class="pre">X-API-Key:</span> <span class="pre">&lt;api-key&gt;</span></code> with the request. In case of using CURL: <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">&lt;HTTP</span> <span class="pre">METHOD&gt;</span> <span class="pre">-H</span> <span class="pre">'X-API-Key:</span> <span class="pre">&lt;API-KEY&gt;'</span> <span class="pre">API_ENDPOINT</span></code></p></li>
 </ul>
+<hr class="docutils" />
+<section id="ping-endpoint">
+<h2>Ping Endpoint<a class="headerlink" href="#ping-endpoint" title="Link to this heading">¶</a></h2>
+<p>Ping test to check if the API Server is up.</p>
+<p><strong>Request:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/ping
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&lt;api-key&gt;</span> <span class="pre">http://actions.stockic.in/api/v2/actions/ping</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="add-bookmarks">
+<h2>Add Bookmarks<a class="headerlink" href="#add-bookmarks" title="Link to this heading">¶</a></h2>
+<p>This endpoint allows you to add bookmark to user’s account. Since all the users are associated and completely identified with their API Keys, you can add news via their StockicID into their account.</p>
+<p><strong>Request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>POST<span class="w"> </span>/actions/bookmarks-add
+</pre></div>
+</div>
+<p><strong>Body</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;NewsID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The NewsID is equivalent to StockicID of the news and should be sent as a string data type.</p>
+<p><strong>Response</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bookmark added successfully&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">-H</span> <span class="pre">&quot;X-API-Key:</span> <span class="pre">&lt;user-api-key&gt;&quot;</span> <span class="pre">-d</span> <span class="pre">'{&quot;NewsID&quot;:</span> <span class="pre">&quot;&lt;news-id&gt;&quot;}'</span> <span class="pre">http://actions.stockic.in/api/v2/actions/bookmarks-add</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="remove-bookmarks">
+<h2>Remove Bookmarks<a class="headerlink" href="#remove-bookmarks" title="Link to this heading">¶</a></h2>
+<p>This endpoint allows you to remove bookmark from user’s accourt. Since all the users are associated and completely identified with their API Keys, you can add news via their StockicID into their account.</p>
+<p><strong>Request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>DELETE<span class="w"> </span>/actions/bookmarks-remove
+</pre></div>
+</div>
+<p><strong>Body</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;NewsID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The NewsID is equivalent to StockicID of the news and should be sent as a string data type.</p>
+<p><strong>Response</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bookmark deleted successfully&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">DELETE</span> <span class="pre">-H</span> <span class="pre">&quot;X-API-Key:</span> <span class="pre">&lt;user-api-key&gt;&quot;</span> <span class="pre">-d</span> <span class="pre">'{&quot;NewsID&quot;:</span> <span class="pre">&quot;&lt;news-id&gt;&quot;}'</span> <span class="pre">http://actions.stockic.in/api/v2/actions/bookmarks-remove</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="list-bookmarks">
+<h2>List Bookmarks<a class="headerlink" href="#list-bookmarks" title="Link to this heading">¶</a></h2>
+<p>This endpoint allows you to list all the bookmarks user have. Since all the users are associated and completely identified with their API Keys, you can add news via their StockicID into their account.</p>
+<p><strong>Request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/actions/bookmarks-list
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bookmarks retrieved successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Bookmarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;news-id-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;news-id-2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;news-id-3&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&quot;X-API-Key:</span> <span class="pre">&lt;user-api-key&gt;&quot;</span> <span class="pre">http://actions.stockic.in/api/v2/actions/bookmarks-list</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="notion-authentication">
+<h2>Notion Authentication<a class="headerlink" href="#notion-authentication" title="Link to this heading">¶</a></h2>
+<p>Initiates an authentication session for Notion OAuth, generating a session token and returning the Notion authorization URL with the token as the state parameter. The session token is stored in Redis for validation during the OAuth flow.</p>
+<p>It retrieves the Notion OAuth URL from environment variables and appends a generated session token. If the URL is missing or an error occurs during session creation, an error response is returned.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GET<span class="w"> </span>/notion/oauth/auth-session
+</pre></div>
+</div>
+<p><strong>Success Response</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OauthURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.notion.com/v1/oauth/authorize?client_id=your-client-id&amp;state=session-token&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Failure Response</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OauthURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;URL not found&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Curl Command:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">GET</span> <span class="pre">-H</span> <span class="pre">&quot;X-API-Key:</span> <span class="pre">&lt;user-api-key&gt;&quot;</span> <span class="pre">http://actions.stockic.in/api/v2/notion/oauth/auth-session</span></code></p>
+</section>
 </section>
 
         </article>
@@ -262,23 +369,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="feed-api.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Feed API V2 Overview</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../introduction.html">
+          
+          <a class="prev-page" href="feed-api.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Introduction</div>
+                <div class="title">Feed API V2 Overview</div>
                 
               </div>
             </a>
@@ -300,8 +399,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Actions API V2 Overview</a><ul>
+<li><a class="reference internal" href="#ping-endpoint">Ping Endpoint</a></li>
+<li><a class="reference internal" href="#add-bookmarks">Add Bookmarks</a></li>
+<li><a class="reference internal" href="#remove-bookmarks">Remove Bookmarks</a></li>
+<li><a class="reference internal" href="#list-bookmarks">List Bookmarks</a></li>
+<li><a class="reference internal" href="#notion-authentication">Notion Authentication</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
